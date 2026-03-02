@@ -1,6 +1,6 @@
 {
   "name": "tapaudio-backend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "API para extrair áudio de Lives do YouTube",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "youtube-dl-exec": "^2.4.15"
+    "@distube/ytdl-core": "^4.15.9"
   }
 }
