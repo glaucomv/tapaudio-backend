@@ -1,5 +1,3 @@
-// tapaudio-backend/index.js
-
 const express = require('express');
 const ytdl = require('@distube/ytdl-core');
 const app = express();
@@ -13,10 +11,10 @@ app.get('/api/live/:id', async (req, res) => {
     console.log(`Processando requisição para: ${url}`);
 
     try {
-        // Puxa as informações do vídeo direto do YouTube
+        // Puxa as informações do vídeo direto do YouTube usando a nova biblioteca
         const info = await ytdl.getInfo(url);
         
-        // Em transmissões ao vivo, o YouTube sempre fornece uma URL de manifesto HLS
+        // Extrai a URL do manifesto HLS da Live
         const hlsUrl = info.formats.find(f => f.isHLS)?.url || info.player_response?.streamingData?.hlsManifestUrl;
 
         if (hlsUrl) {
